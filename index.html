@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="./styles/standart.css" />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
+  <body onload="init()">
     <header>
       <img class="logo-img" src="./assets/icons/Logo.png" alt="Logo" />
     </header>
@@ -37,13 +37,21 @@
 
       <div class="content-wrapper">
         <div class="content-restaurant">
-          <div class="main-content">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          <div id="menu-content" class="main-content">
+            
           </div>
         </div>
 
         <section class="basket-wrapper">
-          <div class="basket">Basket</div>
+          <div class="basket">
+            <div class="basket-headline">
+              <h2>Basket</h2>
+            </div>
+            <div id="basket-content"  class="basket-items"></div>
+            <div class="calculation">
+
+            </div>
+          </div>
         </section>
       </div>
     </main>
