@@ -1,0 +1,24 @@
+.logo-img{
+    width: 92px;
+    height: 38px;
+}
+
+.home-logo{
+    position: absolute;
+    top: 420px;
+    left: 50%; 
+    transform: translateX(-50%);
+}
+
+.home-logo img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: solid 13px white;
+    box-shadow: 2px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.rating{
+    height: 30px;
+    object-fit: contain;
+}
