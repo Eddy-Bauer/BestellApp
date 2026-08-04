@@ -23,7 +23,8 @@ function renderBasket() {
 }
 
 function addToBasket(){
-    
+   let selectedBurger = menu.burgers[index];
+   let addedItem = basket.find(item => item.name === selectedBurger.name);
 }
 
 function init() {
