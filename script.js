@@ -12,19 +12,31 @@ function renderMenu() {
 }
 
 function renderBasket() {
-  let basketContainer = document.getElementById("basket-container");
+  let basketContainer = document.getElementById("basket-content");
   basketContainer.innerHTML = "";
 
   for (let i = 0; i < basket.length; i++) {
     let currentBasketItem = basket[i];
-
     basketContainer.innerHTML += getBasketItemTemplate(currentBasketItem, i);
   }
+    let calcContainer = document.querySelector(".calculation");
+    calcContainer.innerHTML = getCalculationTemplate(basket);
 }
 
-function addToBasket(){
+function addToBasket(index){
    let selectedBurger = menu.burgers[index];
    let addedItem = basket.find(item => item.name === selectedBurger.name);
+
+   if(addedItem){
+    addedItem.amount++;
+   } else{
+    basket.push({
+      name: selectedBurger.name,
+      price: selectedBurger.price,
+      amount: 1
+    });
+   }
+   renderBasket();
 }
 
 function init() {
