@@ -73,4 +73,15 @@
     color: rgba(54, 53, 52, 1);
 }
 
+.calculation{
+    margin-top: 24px;
+    color: white;
+    font-family: 'Palanquin Dark';
+}
 
+.calc-row{
+    display: flex;
+    justify-content: space-between;
+    font-size: 22px;
+    margin-bottom: 12px;
+}
