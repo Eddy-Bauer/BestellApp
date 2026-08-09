@@ -1,20 +1,27 @@
-// 1. Template für die linke Seite
-function getMenuItemTemplate(burger, index) {
-  let formattedPrice = burger.price.toFixed(2);
+function getMenuItemTemplate(item) {
+    let formattedPrice = item.price.toFixed(2);
+    let basketItem = basket.find(b => b.id === item.id);
 
-  return `
+    let actionHtml = basketItem
+        ? `<span class="added-badge">Added ${basketItem.amount}</span>`
+        : `<button class="add-btn" onclick="addToBasket('${item.id}')">Add to basket</button>`;
+
+    return `
         <div class="menu-item-card">
+            <img src="${item.image}" alt="${item.name}" class="menu-item-img" />
             <div class="menu-info">
-                <h3>${burger.name}</h3>
-                <p>${burger.description}</p>
-                <span class="price">${formattedPrice}€</span>
+                <div class="menu-info-top">
+                    <h3>${item.name}</h3>
+                    <span class="price">${formattedPrice}€</span>
+                </div>
+                <p>${item.description}</p>
+                ${actionHtml}
             </div>
-            <button class="add-btn" onclick="addToBasket(${index})">Hinzufügen</button>
         </div>
     `;
 }
 
-// 2. Template für die rechte Seite (Warenkorb)
+
 function getBasketItemTemplate(basketItem, index) {
   let totalPrice = (basketItem.price * basketItem.amount).toFixed(2);
 
@@ -33,7 +40,7 @@ function getBasketItemTemplate(basketItem, index) {
     `;
 }
 
-// Template für den Amount
+
 function getCalculationTemplate(basket) {
   let subtotal = basket.reduce((sum, item) => sum + item.price * item.amount,0,);
   let deliveryFee = 4.99;
@@ -54,5 +61,15 @@ function getCalculationTemplate(basket) {
             <span>${total.toFixed(2)}€</span>
         </div>
         <button class="buy-button">Buy now (${total.toFixed(2)}€)</button>
+    `;
+}
+
+
+function getCategoryHeaderTemplate(category) {
+    return `
+        <div class="category-header">
+            <img src="${category.icon}" alt="${category.title}" class="category-icon" />
+            <h2>${category.title}</h2>
+        </div>
     `;
 }
