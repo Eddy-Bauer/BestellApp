@@ -4,10 +4,13 @@ function renderMenu() {
   let menuContainer = document.getElementById("menu-content");
   menuContainer.innerHTML = "";
 
-  for (let i = 0; i < menu.burgers.length; i++) {
-    let currentBurger = menu.burgers[i];
+  for (let categoryKey in menu){
+    let category = menu[categoryKey];
+    menuContainer.innerHTML += getCategoryHeaderTemplate(category);
 
-    menuContainer.innerHTML += getMenuItemTemplate(currentBurger, i);
+    for (let i = 0; i < category.items.length; i++){
+      menuContainer.innerHTML += getMenuItemTemplate(category.items[i]);
+    }
   }
 }
 
@@ -23,20 +26,49 @@ function renderBasket() {
     calcContainer.innerHTML = getCalculationTemplate(basket);
 }
 
-function addToBasket(index){
-   let selectedBurger = menu.burgers[index];
-   let addedItem = basket.find(item => item.name === selectedBurger.name);
+function findMenuItemById(id){
+  for (let categoryKey in menu){
+    let found = menu[categoryKey].items.find(item => item.id === id);
+    if (found)
+      return found;
+  }
+  return null;
+}
+
+function addToBasket(id){
+   let selectedItem = findMenuItemById(id);
+   let addedItem = basket.find(item => item.id === id);
 
    if(addedItem){
     addedItem.amount++;
    } else{
     basket.push({
-      name: selectedBurger.name,
-      price: selectedBurger.price,
+      id: selectedItem.id,
+      name: selectedItem.name,
+      price: selectedItem.price,
       amount: 1
     });
    }
+
+   renderMenu();
    renderBasket();
+}
+
+function increaseAmount(id){
+  let item = basket.find(item => item.id === id);
+  item.amount++;
+  renderMenu();
+  renderBasket();
+}
+
+function decreaseAmount(id){
+  let item = basket.find(item => item.id === id);
+  item.amount--;
+  if(item.amount <= 0){
+    basket = basket.filter(item => item.id !== id);
+  }
+  renderMenu();
+  renderBasket();
 }
 
 function init() {
