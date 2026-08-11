@@ -22,7 +22,7 @@ function getMenuItemTemplate(item) {
 }
 
 
-function getBasketItemTemplate(basketItem, index) {
+function getBasketItemTemplate(basketItem, id) {
   let totalPrice = (basketItem.price * basketItem.amount).toFixed(2);
 
   return `
@@ -30,9 +30,9 @@ function getBasketItemTemplate(basketItem, index) {
             <div class="item-name">${basketItem.amount} x ${basketItem.name}</div>
             <div class="item-details">
                 <div class="item-controls">
-                    <button class="btn-icon" onclick="decreaseAmount(${index})">-</button>
+                    <button class="btn-icon" onclick="decreaseAmount('${basketItem.id}')">-</button>
                     <span>${basketItem.amount}</span>
-                    <button class="btn-icon" onclick="increaseAmount(${index})">+</button>
+                    <button class="btn-icon" onclick="increaseAmount('${basketItem.id}')">+</button>
                 </div>
                 <div class="item-price">${totalPrice}€</div>
             </div>

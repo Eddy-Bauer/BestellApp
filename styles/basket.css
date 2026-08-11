@@ -27,7 +27,7 @@
 .basket-items{
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 8px;
 }
 
 .basket-item{
@@ -39,8 +39,8 @@
 .item-name{
     font-family: 'Palanquin Dark';
     font-size: 22px;
+    line-height: 120%;
     color: rgba(54, 53, 52, 1);
-    margin-bottom: 8px;
 }
 
 .item-details{
@@ -75,6 +75,7 @@
 
 .calculation{
     margin-top: 24px;
+    padding: 10px;
     color: white;
     font-family: 'Palanquin Dark';
 }
@@ -82,6 +83,32 @@
 .calc-row{
     display: flex;
     justify-content: space-between;
+    font-size: 20px;
+}
+
+.calc-divider{
+    margin-top: 10px;
+    margin-bottom: 5px;
+    margin-left: -10px;
+    margin-right: -10px;
+    border-radius: 3px;
+}
+
+.calc-total{
+    display: flex;
+    justify-content: space-between;
     font-size: 22px;
-    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+.buy-button{
+    width: 320px;
+    border: none;
+    border-radius: 60px;
+    color: white;
+    background-color: rgba(231, 108, 31, 1);
+    padding: 13px;
+    font-size: 32px;
+    margin-top: 30px;
+    margin-bottom: 20px;
 }

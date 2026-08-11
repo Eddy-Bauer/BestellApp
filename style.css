@@ -1,16 +1,11 @@
 .content-wrapper{
-    gap: 2px;
-    padding: 2px;
     display: flex;
     flex-direction: row;
-    flex-grow: 1;
-    background-color: rgb(18, 0, 95);
 }
 
 .content-restaurant{
     width: calc(100% - 250px);
-    padding: 16px;
-    border: 2px solid blue;
+    min-width: 0;
 }
 
 header{
@@ -26,12 +21,9 @@ header{
   background-repeat: no-repeat;
   background-size: cover;
 }
+
 .main-content{
-    padding: 32px;
-    font-size: 32px;
-    height: 1500px;
-    width: 100%;
-    background-color: rgba(11, 114, 233, 0.815);
+    padding: 0px 80px;
 }
 
 .main-headline{
@@ -62,4 +54,77 @@ h1 span{
     font-family: 'Palanquin Dark';
     font-size: 24px;
     color: rgba(54, 53, 52, 1);
+}
+
+.category-header{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background-color: rgba(231, 108, 31, 1);
+    padding: 12px 80px;
+    margin: 24px 0px 16px -80px;
+    width: 100vw;
+    position: relative;
+}
+
+.category-header:first-child{
+    margin-top: 0;
+}
+
+.category-icon{
+    width: 88px;
+    height: 91px;
+}
+
+.category-header h2{
+    color: white;
+    font-size: 40px;
+}
+
+.menu-item-card{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    background-color: rgba(253, 234, 220, 1);
+    border-radius: 12px;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.menu-item-img{
+    width: 200px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 12px;
+    flex-shrink: 0;
+}
+
+.menu-info{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-info-top{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.menu-info-top h3{
+    font-size: 24px;
+    font-weight: 500;
+    color: rgba(54, 53, 52, 1);
+}
+
+.menu-info-top .price{
+    font-weight: 500;
+    font-size: 24px;
+    color: rgba(54, 53, 52, 1);
+}
+
+.menu-info p{
+    font-size: 16px;
+    color: rgba(54, 53, 52, 1);
+    flex-grow: 1;
 }

@@ -22,3 +22,31 @@
     height: 30px;
     object-fit: contain;
 }
+
+.add-btn{
+    align-self: flex-end;
+    background-color: rgba(255, 255, 255, 1);
+    color: rgba(54, 53, 52, 1);
+    font-size: 16px;
+    font-weight: 600;
+    font-family: inherit;
+    border: none;
+    border-radius: 20px;
+    padding: 5px 8px;
+    cursor: pointer;
+}
+
+.add-btn:hover{
+    color: rgba(231, 108, 31, 1);
+    box-shadow: 1px 2px 2px 0px rgba(0, 0, 0, 0.2);
+}
+
+.added-badge{
+    align-self: flex-end;
+    background-color: rgba(255, 255, 255, 1);
+    color: rgba(231, 108, 31, 1);
+    font-size: 16px;
+    padding: 5px 8px;
+    border: none;
+    border-radius: 20px;
+}
