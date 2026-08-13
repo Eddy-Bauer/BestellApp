@@ -2,5 +2,14 @@
     box-sizing: border-box;
     margin: 0;
     scroll-behavior: smooth;
-    font-family: 'Palanquin Dark';
+    font-family: 'Palanquin';
+}
+
+:root{
+    --gutter: max(calc(50vw - 720px), 0px);
+}
+
+main{
+    padding-left: var(--gutter);
+    padding-right: var(--gutter);
 }
