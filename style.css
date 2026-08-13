@@ -10,7 +10,7 @@
 
 header{
     background-color: rgba(231, 108, 31, 1);
-    padding: 20px 80px;
+    height: 128px;
 }
 
 .home-background{
@@ -51,8 +51,9 @@ h1 span{
 }
 
 .title-detail{
-    font-family: 'Palanquin Dark';
+    font-family: 'Palanquin';
     font-size: 24px;
+    font-weight: bold;
     color: rgba(54, 53, 52, 1);
 }
 
@@ -62,8 +63,8 @@ h1 span{
     gap: 16px;
     background-color: rgba(231, 108, 31, 1);
     height: 60px;
-    padding-left: 160px;
-    margin: 80px 0px 30px -120px;
+    padding-left: calc(var(--gutter) + 160px);
+    margin: 80px 0px 30px calc(-1 * (var(--gutter) + 120px));
     width: 100vw;
     position: relative;
 }
@@ -117,12 +118,12 @@ h1 span{
 
 .menu-info-top h3{
     font-size: 24px;
-    font-weight: 500;
+    font-weight: 600;
     color: rgba(54, 53, 52, 1);
 }
 
 .menu-info-top .price{
-    font-weight: 500;
+    font-weight: 600;
     font-size: 24px;
     color: rgba(54, 53, 52, 1);
 }
@@ -130,12 +131,31 @@ h1 span{
 .menu-info p{
     max-width: 350px;
     font-size: 16px;
+    font-weight: 500;
     line-height: 120%;
     color: rgba(54, 53, 52, 1);
     flex-grow: 1;
 }
 
 footer{
+    display: flex;
+    height: 128px;
+    justify-content: center;
+    align-items: end;
     background-color: rgba(231, 108, 31, 1);
-    padding: 20px 80px;
+    padding: 32px 80px;
+}
+
+.footer-content{
+    display: flex;
+    flex-direction: row;
+    gap: 72px;
+    font-size: 18px;
+    color: white;
+}
+
+.copyright-group{
+    display: flex;
+    align-items: center;
+    gap: 4px;
 }
