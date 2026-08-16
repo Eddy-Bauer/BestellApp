@@ -75,3 +75,17 @@ function init() {
   renderMenu();
   renderBasket();
 }
+
+function openBasket(){
+  document.getElementById("basketWrapper").classList.add("open");
+  document.getElementById("basketBackdrop").classList.add("open");
+}
+
+function closeBasket(){
+  document.getElementById("basketWrapper").classList.remove("open");
+  document.getElementById("basketBackdrop").classList.remove("open");
+}
+
+function scrollTop(){
+  window.scrollTo({ top: 0, behavior: "smooth"});
+}
