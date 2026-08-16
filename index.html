@@ -38,12 +38,12 @@
       <div class="content-wrapper">
         <div class="content-restaurant">
           <div id="menu-content" class="main-content">
-            
           </div>
         </div>
 
-        <section class="basket-wrapper">
+        <section class="basket-wrapper" id="basketWrapper">
           <div class="basket">
+            <button class="basket-close" onclick="closeBasket()">X</button>
             <div class="basket-headline">
               <h2>Your Basket</h2>
             </div>
@@ -54,6 +54,16 @@
           </div>
         </section>
       </div>
+
+      <div class="basket-backdrop" id="basketBackdrop" onclick="closeBasket()"></div>
+
+      <div class="bottom-nav">
+        <button class="nav-btn" onclick="scrollTop()"><img src="./assets/icons/home.png" alt=""></button>
+        <button class="nav-btn"><img src="./assets/icons/person.png" alt=""></button>
+        <button class="nav-btn"><img src="./assets/icons/takeout_dining_2.png" alt=""></button>
+        <button class="nav-btn" onclick="openBasket()"><img src="./assets/icons/basket.png" alt=""></button>
+      </div>
+
     </main>
 
     <footer>
