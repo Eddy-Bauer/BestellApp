@@ -57,13 +57,19 @@
 
       <div class="basket-backdrop" id="basketBackdrop" onclick="closeBasket()"></div>
 
+      <div class="confirmation" id="confirmationDialog">
+        <button class="dialog-close" onclick="closeConfirmation()">X</button>
+        <img src="./assets/icons/confirm.png" alt="confirm-logo" class="confirmation-icon">
+        <h2>Order confirmed</h2>
+        <p>Your food is on the way!</p>
+      </div>
+
       <div class="bottom-nav">
         <button class="nav-btn" onclick="scrollTop()"><img src="./assets/icons/home.png" alt=""></button>
         <button class="nav-btn"><img src="./assets/icons/person.png" alt=""></button>
         <button class="nav-btn"><img src="./assets/icons/takeout_dining_2.png" alt=""></button>
         <button class="nav-btn" onclick="openBasket()"><img src="./assets/icons/basket.png" alt=""></button>
       </div>
-
     </main>
 
     <footer>
