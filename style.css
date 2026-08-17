@@ -107,35 +107,42 @@ h1 span{
 
 .menu-info{
     flex-grow: 1;
-    display: flex;
-    flex-direction: column;
+    align-self: stretch;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: "title price" "desc desc" "action action";
 }
 
-.menu-info-top{
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-}
-
-.menu-info-top h3{
+.item-title{
+    grid-area: title;
     font-size: 24px;
     font-weight: 600;
     color: rgba(54, 53, 52, 1);
 }
 
-.menu-info-top .price{
+.menu-info .price{
+    grid-area: price;
     font-weight: 600;
     font-size: 24px;
     color: rgba(54, 53, 52, 1);
 }
 
 .menu-info p{
+    grid-area: desc;
     max-width: 350px;
     font-size: 16px;
     font-weight: 500;
     line-height: 120%;
     color: rgba(54, 53, 52, 1);
     flex-grow: 1;
+}
+
+.menu-info .add-btn,
+.menu-info .added-badge{
+    grid-area: action;
+    justify-self: end;
+    align-self: end;
 }
 
 footer{
@@ -165,6 +172,16 @@ footer{
     .main-content{
         padding-left: 16px;
         padding-right: 16px;
+    }
+
+    .title-row{
+        flex-direction: column-reverse;
+        align-items: unset;
+        gap: 0;
+    }
+
+    .content-restaurant{
+        width: 100%;
     }
 
    .category-header{
@@ -202,5 +219,9 @@ footer{
 
     .menu-info p{
         max-width: 100%;
+    }
+
+    .menu-info{
+        grid-template-areas: "title title" "desc desc" "price action";
     }
 }
