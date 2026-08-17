@@ -1,4 +1,5 @@
 let basket = [];
+let confirmationTimer = null;
 
 function renderMenu() {
   let menuContainer = document.getElementById("menu-content");
@@ -50,6 +51,8 @@ function addToBasket(id){
     });
    }
 
+   document.getElementById("basketWrapper").classList.remove("hidden");
+   
    renderMenu();
    renderBasket();
 }
@@ -88,4 +91,30 @@ function closeBasket(){
 
 function scrollTop(){
   window.scrollTo({ top: 0, behavior: "smooth"});
+}
+
+function removeFromBasket(id){
+  basket = basket.filter(item => item.id !== id);
+  renderMenu();
+  renderBasket();
+}
+
+function handleBuyNow(){
+  closeBasket();
+  document.getElementById("basketWrapper").classList.add("hidden");
+
+  document.getElementById("confirmationDialog").classList.add("open");
+  document.getElementById("basketBackdrop").classList.add("open");
+
+  basket = [];
+  renderMenu();
+  renderBasket();
+
+  confirmationTimer = setTimeout(closeConfirmation, 7000);
+}
+
+function closeConfirmation(){
+  document.getElementById("confirmationDialog").classList.remove("open");
+  document.getElementById("basketBackdrop").classList.remove("open");
+  clearTimeout(confirmationTimer);
 }
