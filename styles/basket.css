@@ -31,12 +31,41 @@
 }
 
 .basket-item{
+    position: relative;
     background-color: rgba(253, 234, 220, 1);
     border-radius: 20px;
     padding: 20px;
 }
 
+.delete-btn{
+    position: absolute;
+    top: 25px;
+    right: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.icon-hover{
+    display: none;
+}
+
+.delete-btn:hover .icon-default{
+    display: none;
+}
+
+.delete-btn:hover .icon-hover{
+    display: block;
+}
+
+.delete-btn img{
+    width: 16px;
+    height: 18px;
+}
+
 .item-name{
+    width: 250px;
     font-family: 'Palanquin';
     font-size: 22px;
     font-weight: 700;
@@ -147,16 +176,76 @@
     display: none;
     position: absolute;
     top: 16px;
-    right: 16px;
+    right: 45px;
     background: none;
     border: none;
     color: white;
     font-size: 20px;
     cursor: pointer;
+    padding: 0;
 }
 
 .basket-backdrop{
     display: none;
+    position: fixed;
+    inset: 0;
+    background:rgba(0,0,0,0.4);
+}
+
+.basket-backdrop.open{
+    display: block;
+}
+
+.confirmation{
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: min(400px, calc(100vw - 80px));
+    background-color: rgba(54, 53, 52, 1);
+    border-radius: 20px;
+    padding: 32px 24px;
+    text-align: center;
+    color: white;
+    z-index: 1002;
+}
+
+.confirmation.open{
+    display: block;
+}
+
+.basket-wrapper.hidden{
+    display: none !important;
+}
+
+.dialog-close{
+    position: absolute;
+    top: 16px;
+    right: 45px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 0;
+}
+
+.confirmation-icon{
+    width: 80px;
+    height: 60px;
+    margin-top: 16px;
+}
+
+.confirmation h2{
+    font-size: 42px;
+    color: rgba(253, 234, 220, 1);
+}
+
+.confirmation p{
+    font-size: 28px;
+    font-weight: 600;
+    color: rgba(253, 234, 220, 1);
 }
 
 .bottom-nav{
@@ -171,9 +260,8 @@
     .basket-wrapper{
         display: none;
         position: fixed;
-        top: 80px;
-        right: 16px;
-        width: min(320px, calc(100vw - 32px));
+        inset: 0;
+        width: 100%;
         z-index: 1001;
     }
 
@@ -182,10 +270,11 @@
     }
 
     .basket{
-        height: auto;
-        max-height: 70vh;
-        border-radius: 20px;            
-        box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+        width: 100%;
+        height: 100%;
+        max-height: none;
+        border-radius: 0;            
+        box-shadow: none;
         position: static;                
     }
 
@@ -228,5 +317,13 @@
 
     footer{
         margin-bottom: 64px;
+    }
+
+    .buy-button{
+        display: block;
+        width: 100%;
+        max-width: 260px;
+        font-size: 24px;
+        margin: 30px auto 20px auto;
     }
 }
