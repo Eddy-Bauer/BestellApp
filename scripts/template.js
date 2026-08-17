@@ -10,10 +10,10 @@ function getMenuItemTemplate(item) {
         <div class="menu-item-card">
             <img src="${item.image}" alt="${item.name}" class="menu-item-img" />
             <div class="menu-info">
-                <div class="menu-info-top">
-                    <h3>${item.name}</h3>
+                
+                    <h3 class="item-title">${item.name}</h3>
                     <span class="price">${formattedPrice}€</span>
-                </div>
+                
                 <p>${item.description}</p>
                 ${actionHtml}
             </div>
@@ -27,6 +27,10 @@ function getBasketItemTemplate(basketItem, id) {
 
   return `
         <div class="basket-item">
+            <button class="delete-btn" onclick="removeFromBasket('${basketItem.id}')">
+            <img src="./assets/icons/delete.png" alt="Papierkorb-icon" class="icon-default">
+            <img src="./assets/icons/delete-hover.png" alt="Papierkorb-icon" class="icon-hover">
+            </button>
             <div class="item-name">${basketItem.amount} x ${basketItem.name}</div>
             <div class="item-details">
                 <div class="item-controls">
@@ -60,7 +64,7 @@ function getCalculationTemplate(basket) {
             <span>Total</span>
             <span>${total.toFixed(2)}€</span>
         </div>
-        <button class="buy-button">Buy now (${total.toFixed(2)}€)</button>
+        <button class="buy-button" onclick="handleBuyNow()"> Buy now (${total.toFixed(2)}€)</button>
     `;
 }
 
