@@ -1,6 +1,7 @@
 let menu = {
   burgers: {
     title: "Burger & Sandwiches",
+    shortTitle: "Burger",
     icon: "./assets/icons/burger-icon.png",
     items: [
       {
