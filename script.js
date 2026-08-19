@@ -25,6 +25,8 @@ function renderBasket() {
   }
     let calcContainer = document.querySelector(".calculation");
     calcContainer.innerHTML = getCalculationTemplate(basket);
+
+    updateCartIndicator();
 }
 
 function findMenuItemById(id){
@@ -117,4 +119,21 @@ function closeConfirmation(){
   document.getElementById("confirmationDialog").classList.remove("open");
   document.getElementById("basketBackdrop").classList.remove("open");
   clearTimeout(confirmationTimer);
+}
+
+function updateCartIndicator(){
+  let totalCount = basket.reduce((sum, item) => sum + item.amount, 0);
+
+  let cartBtn = document.getElementById("cartBtn");
+  let cartBadge = document.getElementById("cartBadge");
+
+  cartBadge.textContent = totalCount;
+
+  if (totalCount > 0 ){
+    cartBtn.classList.add("active");
+    cartBadge.classList.add("visible");
+  } else{
+    cartBtn.classList.remove("active");
+    cartBadge.classList.remove("visible");
+  }
 }
