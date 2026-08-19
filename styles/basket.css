@@ -144,6 +144,7 @@
     font-weight: 700;
     margin-top: 30px;
     margin-bottom: 20px;
+    cursor: pointer;
 }
 
 .basket-scrollbar{
@@ -252,7 +253,44 @@
     display: none;
 }
 
-@media (max-width: 1220px){
+.cart-btn{
+    position: relative;
+}
+
+.cart-btn .icon-active{
+    display: none;
+}
+
+.cart-btn.active .icon-default{
+    display: none;
+}
+
+.cart-btn.active .icon-active{
+    display: block;
+}
+
+.cart-badge{
+    display: none;
+    position: absolute;
+    top: -5px;
+    right: 0px;
+    background-color: rgba(253, 234, 220, 1);
+    color: rgba(231, 108, 31, 1);
+    font-size: 14px;
+    line-height: 120%;
+    font-weight: 600;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart-badge.visible{
+    display: flex;
+}
+
+@media (max-width: 1200px){
     .content-wrapper{
         flex-direction: column;
     }
