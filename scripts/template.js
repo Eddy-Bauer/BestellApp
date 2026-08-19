@@ -10,11 +10,9 @@ function getMenuItemTemplate(item) {
         <div class="menu-item-card">
             <img src="${item.image}" alt="${item.name}" class="menu-item-img" />
             <div class="menu-info">
-                
                     <h3 class="item-title">${item.name}</h3>
                     <span class="price">${formattedPrice}€</span>
-                
-                <p>${item.description}</p>
+                    <p>${item.description}</p>
                 ${actionHtml}
             </div>
         </div>
