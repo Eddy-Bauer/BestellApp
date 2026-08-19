@@ -3,7 +3,7 @@
     height: 50px;
     position: absolute;
     top: 45px;
-    left: calc(var(--gutter) + 120px);
+    left: calc(var(--outer-gutter) + 120px);
 }
 
 .home-logo{
