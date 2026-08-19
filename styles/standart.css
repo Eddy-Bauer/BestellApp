@@ -6,10 +6,12 @@
 }
 
 :root{
-    --gutter: max(calc(50vw - 720px), 0px);
+    --outer-gutter: max(calc(50vw - 720px), 0px);
+    --content-padding: clamp(20px, 8.3vw, 120px);
+    --total-offset: calc(var(--outer-gutter) + var(--content-padding));
 }
 
 main{
-    padding-left: var(--gutter);
-    padding-right: var(--gutter);
+    padding-left: var(--outer-gutter);
+    padding-right: var(--outer-gutter);
 }
