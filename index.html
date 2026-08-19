@@ -68,7 +68,11 @@
         <button class="nav-btn" onclick="scrollTop()"><img src="./assets/icons/home.png" alt=""></button>
         <button class="nav-btn"><img src="./assets/icons/person.png" alt=""></button>
         <button class="nav-btn"><img src="./assets/icons/takeout_dining_2.png" alt=""></button>
-        <button class="nav-btn" onclick="openBasket()"><img src="./assets/icons/basket.png" alt=""></button>
+        <button class="nav-btn cart-btn" id="cartBtn" onclick="openBasket()">
+          <img src="./assets/icons/basket.png" class="icon-default" alt="Basket">
+          <img src="./assets/icons/basket-aktiv.png" class="icon-active" alt="Basket">
+          <span class="cart-badge" id="cartBadge">0</span>
+        </button>
       </div>
     </main>
 
@@ -76,10 +80,10 @@
       <div class="footer-content">
         <div class="copyright-group">
           <img src="./assets/icons/copyright.png" alt="">
-          <p>2025 BurgerHouse</p>
+          <a href=""><p>2025 BurgerHouse</p> </a>
         </div>
-        <p>Imprint</p>
-        <p>Cookie Präferenzen</p>
+        <a href=""><p>Imprint</p></a>
+        <a href=""><p>Cookie Präferenzen</p></a>
       </div>
     </footer>
 
