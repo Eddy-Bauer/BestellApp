@@ -22,6 +22,12 @@ header{
   background-size: cover;
 }
 
+.home-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .main-content{
     padding-left: var(--content-padding);
     padding-right: 20px;
@@ -31,7 +37,7 @@ header{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 80px 0;
+    margin: 80px 30px;
     text-align: center;
 }
 
@@ -58,6 +64,10 @@ h1 span{
     color: rgba(54, 53, 52, 1);
 }
 
+.title-short{
+    display: none;
+}
+
 .category-header{
     display: flex;
     align-items: center;
@@ -78,7 +88,7 @@ h1 span{
     width: 88px;
     height: 91px;
     position: relative;
-    top: -15px;
+    top: -12px;
 }
 
 .category-header h2{
@@ -188,7 +198,14 @@ footer a:hover{
     .title-row{
         flex-direction: column-reverse;
         align-items: unset;
-        gap: 0;
+        gap: 16px;
+    }
+    
+    .title-full{
+        display: none;
+    }
+    .title-short{
+        display: inline;
     }
 
     .content-restaurant{
@@ -198,8 +215,8 @@ footer a:hover{
    .category-header{
         flex-direction: column;    
         justify-content: center;
-        min-height: 70px;
-        padding: 40px 16px 14px; 
+        min-height: 60px;
+        padding: 20px 16px 14px; 
         text-align: center;
         position: relative;
     }
@@ -209,8 +226,8 @@ footer a:hover{
         top: -40px;                 
         left: 50%;
         transform: translateX(-50%);
-        width: 64px;
-        height: 64px;
+        width: 58px;
+        height: 60px;
     }
 
     .category-header h2{
@@ -237,6 +254,34 @@ footer a:hover{
 }
 
 @media (max-width: 760px) {
+
+    .home-content{
+        padding-top: 20px;
+    }
+
+    .home-background{
+        width: 90%;
+        background-position: unset;
+        border-radius: 16px;
+    }
+
+    .home-logo{
+        top: 500px;
+    }
+    
+    .home-logo img{
+        width: 150px;
+    }
+
+    h1{
+        font-size: 40px;
+        line-height: 120%;
+    }
+
+    .title-detail{
+        font-size: 22px;
+        line-height: 120%;
+    }
 
     .logo-img{
         left: 20px;
