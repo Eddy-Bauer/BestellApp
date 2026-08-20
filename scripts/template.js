@@ -71,7 +71,10 @@ function getCategoryHeaderTemplate(category) {
     return `
         <div class="category-header">
             <img src="${category.icon}" alt="${category.title}" class="category-icon" />
-            <h2>${category.title}</h2>
+            <h2>
+                <span class="title-full">${category.title}</span>
+                <span class="title-short">${category.shortTitle}</span>
+            </h2>
         </div>
     `;
 }
