@@ -37,6 +37,7 @@ let menu = {
 
   pizza: {
     title: "Pizza (30cm)",
+    shortTitle: "Pizza (30cm)",
     icon: "./assets/icons/pizza-icon.png",
     items: [
       {
@@ -72,6 +73,7 @@ let menu = {
 
   salad: {
     title: "Salad",
+    shortTitle: "Salad",
     icon: "./assets/icons/salad-icon.png",
     items: [
       {
