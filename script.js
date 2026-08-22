@@ -2,11 +2,11 @@ let basket = [];
 let confirmationTimer = null;
 
 function renderMenu() {
-  let menuContainer = document.getElementById("menu-content");
+  const menuContainer = document.getElementById("menu-content");
   menuContainer.innerHTML = "";
 
   for (let categoryKey in menu){
-    let category = menu[categoryKey];
+    const category = menu[categoryKey];
     menuContainer.innerHTML += getCategoryHeaderTemplate(category);
 
     for (let i = 0; i < category.items.length; i++){
@@ -16,17 +16,21 @@ function renderMenu() {
 }
 
 function renderBasket() {
-  let basketContainer = document.getElementById("basket-content");
-  basketContainer.innerHTML = "";
+  const basketContainer = document.getElementById("basket-content");
+  const calcContainer = document.querySelector(".calculation");
 
-  for (let i = 0; i < basket.length; i++) {
-    let currentBasketItem = basket[i];
-    basketContainer.innerHTML += getBasketItemTemplate(currentBasketItem, i);
-  }
-    let calcContainer = document.querySelector(".calculation");
+  if (basket.length === 0) {
+    basketContainer.innerHTML = getEmptyBasketTemplate();
+    calcContainer.innerHTML = "";    // keine Summen/Buy-Button anzeigen, wenn nichts drin ist
+  } else {
+    basketContainer.innerHTML = "";
+    for (let i = 0; i < basket.length; i++) {
+      basketContainer.innerHTML += getBasketItemTemplate(basket[i]);
+    }
     calcContainer.innerHTML = getCalculationTemplate(basket);
+  }
 
-    updateCartIndicator();
+  updateCartIndicator();
 }
 
 function findMenuItemById(id){
@@ -39,8 +43,8 @@ function findMenuItemById(id){
 }
 
 function addToBasket(id){
-   let selectedItem = findMenuItemById(id);
-   let addedItem = basket.find(item => item.id === id);
+   const selectedItem = findMenuItemById(id);
+   const addedItem = basket.find(item => item.id === id);
 
    if(addedItem){
     addedItem.amount++;
@@ -53,14 +57,12 @@ function addToBasket(id){
     });
    }
 
-   document.getElementById("basketWrapper").classList.remove("hidden");
-   
    renderMenu();
    renderBasket();
 }
 
 function increaseAmount(id){
-  let item = basket.find(item => item.id === id);
+  const item = basket.find(item => item.id === id);
   item.amount++;
   renderMenu();
   renderBasket();
@@ -84,11 +86,15 @@ function init() {
 function openBasket(){
   document.getElementById("basketWrapper").classList.add("open");
   document.getElementById("basketBackdrop").classList.add("open");
+  document.documentElement.classList.add("no-scroll");
+  document.body.classList.add("no-scroll");
 }
 
 function closeBasket(){
   document.getElementById("basketWrapper").classList.remove("open");
   document.getElementById("basketBackdrop").classList.remove("open");
+  document.documentElement.classList.remove("no-scroll");
+  document.body.classList.remove("no-scroll");
 }
 
 function scrollToTop(){
@@ -103,7 +109,6 @@ function removeFromBasket(id){
 
 function handleBuyNow(){
   closeBasket();
-  document.getElementById("basketWrapper").classList.add("hidden");
 
   document.getElementById("confirmationDialog").classList.add("open");
   document.getElementById("basketBackdrop").classList.add("open");
@@ -112,7 +117,7 @@ function handleBuyNow(){
   renderMenu();
   renderBasket();
 
-  confirmationTimer = setTimeout(closeConfirmation, 7000);
+  confirmationTimer = setTimeout(closeConfirmation, 5000);
 }
 
 function closeConfirmation(){
@@ -122,10 +127,9 @@ function closeConfirmation(){
 }
 
 function updateCartIndicator(){
-  let totalCount = basket.reduce((sum, item) => sum + item.amount, 0);
-
-  let cartBtn = document.getElementById("cartBtn");
-  let cartBadge = document.getElementById("cartBadge");
+  const totalCount = basket.reduce((sum, item) => sum + item.amount, 0);
+  const cartBtn = document.getElementById("cartBtn");
+  const cartBadge = document.getElementById("cartBadge");
 
   cartBadge.textContent = totalCount;
 
