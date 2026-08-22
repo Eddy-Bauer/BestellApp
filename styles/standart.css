@@ -5,10 +5,16 @@
     font-family: 'Palanquin';
 }
 
+html.no-scroll, body.no-scroll{
+    overflow: hidden;
+    height: 100dvh;
+}
+
 :root{
     --outer-gutter: max(calc(50vw - 720px), 0px);
-    --content-padding: clamp(20px, 8.3vw, 120px);
+    --content-padding: clamp(20px, calc(20px + (100vw - 1100px) * 0.2941), 120px);
     --total-offset: calc(var(--outer-gutter) + var(--content-padding));
+    overflow-x: clip;
 }
 
 main{
