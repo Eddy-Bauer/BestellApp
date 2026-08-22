@@ -20,9 +20,29 @@
     box-shadow: 2px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
-.rating{
-    height: 30px;
+.rating-content{
+    height: 32px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-radius: 4px;
+    background-color: rgba(250, 202, 172, 1);
+    padding: 4px 5px;
+}
+
+.rating-content img{
+    width: 24px;
     object-fit: contain;
+}
+
+.rating{
+    font-family: 'Palanquin Dark';
+    font-size: 20px;
+}
+
+.all-rating{
+    font-size: 18px;
+    color: rgba(114, 109, 109, 1);
 }
 
 .add-btn{
