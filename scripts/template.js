@@ -83,8 +83,8 @@ function getEmptyBasketTemplate() {
     return `
         <div class="basket-empty">
             <p>Nothing here yet.
-            <br>
-            Go ahead and choose something <br> delicious!</p>
+            <br>Go ahead and choose something 
+            <br> delicious!</p>
             <img src="./assets/icons/empty-cart.png" alt="" class="basket-empty-icon" />
         </div>
     `;
